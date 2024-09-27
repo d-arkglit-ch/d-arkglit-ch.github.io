@@ -10,14 +10,16 @@
   --primary-green: rgb(11, 217, 11);
   --white: white;
   --secondry-green: rgb(65, 226, 65);
+  --htmlcolor: rgb(16, 14, 14);
+   --tile-color: rgb(23, 22, 22);
+   
 }
 
 html {
   scroll-behavior: smooth;
-  background-color: black;
+  background-color: rgb(16, 14, 14);
 }
 
- 
 a {
   text-decoration: none;
 }
@@ -27,13 +29,13 @@ nav {
   display: flex;
   justify-content: space-between;
   padding: 0px 30px;
-/* box-shadow: 0 0 12px var(--primary-green); */
-border-radius:14px;
-z-index: 100;
+  box-shadow: 0 6px 18px rgb(0, 0, 0);
+  border-radius: 14px;
+  z-index: 100;
   position: sticky;
   top: 0.1px;
   margin: 0 14px;
-  background-color: black;
+  background-color: var(--tile-color);
 }
 
 .left {
@@ -70,19 +72,17 @@ z-index: 100;
   opacity: 1;
 }
 
-
 /* about-section */
 .about {
- 
   display: flex;
   height: 700px;
-  /* justify-content: space-between; */
-  /* */
-
+  box-shadow: 0 0px 50px rgb(0, 0, 0);
+  border-radius: 29px;
   align-items: center;
-  padding: 0px 10px;
-  margin: 0px 30px;
-  gap: 50px;
+  padding: 0px 20px;
+  margin: 20px 30px;
+  gap: 30px;
+  background-color: var(--tile-color);
 }
 
 
@@ -97,21 +97,19 @@ z-index: 100;
 }
 
 .about .photo {
-  border: 2px solid var(--primary-green);
-  border-radius: 50%;
-  box-shadow: 0 0 30px var(--secondry-green);
+  border: 2px solid black;
+  border-radius: 20%;
+  box-shadow: 0 0 10px black;
 
   flex: 1;
 }
 
 .photo img {
-  width: 400px;
-  border-radius: 50%;
+  width: 300px;
+  border-radius: 20%;
   display: flex;
-  justify-content: right;
+  /* justify-content: right; */
 }
-
-
 
 /* skill section  */
 .skill h1 {
@@ -139,6 +137,10 @@ z-index: 100;
 
 .cell {
   object-fit: contain;
+  box-shadow: 0 0 15px black;
+  border-radius:23px ;
+
+
 }
 
 .cell:hover {
@@ -147,7 +149,7 @@ z-index: 100;
   transition: 0.3s ease-in-out;
   scale: 1.25;
 }
-.java{
+.java {
   width: 100px;
 }
 
@@ -165,119 +167,254 @@ z-index: 100;
 }
 
 
+.se1 {
+  /* display: flex; */
+  justify-content: center;
+  margin-top: 34px;
+  margin-bottom: 24px;
+  align-items: center;
+  text-align: center;
+  height: 50vh;
+  /* background-color: var(--tile-color); */
+}
+.textt h1{
+color: var(--secondry-green);
+font-size: 40px;
+}
+
+/* Scroll container with horizontal scrolling enabled */
+.scroll-container {
+  position: relative;
+  
+  width: 100vw;
+  overflow-x: scroll;  
+  scrollbar-width: none;/* Enable horizontal scrolling */
+  overflow-y: hidden;  /* Hide vertical scrollbar */
+  white-space: nowrap; /* Keep cards in a single row */
+  scroll-behavior: smooth; /* Smooth scrolling */
+}
+
+/* Cards in a row */
+.scroll-content {
+  display: flex;
+}
+
+.card {
+  position: relative;
+  min-width: 200px;
+  border: black;
+  box-shadow:  0 0 36px  #000000;
+  border-radius: 34px;
+  height: 300px;
+  width: 500px;
+  margin: 30px 80px;
+  padding:15px;
+  display: inline-block; /* Align cards in a row */
+  flex-shrink: 0;
+  justify-content: center;
+}
+
+.card img {
+  width: 100%;
+  height: 100%;
+  size: 50%;
+  object-fit: cover;
+  border-radius: 34px;
+}
+
+/* Hidden pop-up details */
+.card-details {
+  position: absolute;
+  top: 0;
+  left: 0;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.8);
+  color: white;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
+  opacity: 0;
+  transition: opacity 0.3s ease;
+  padding: 20px;
+  box-sizing: border-box;
+  text-align: center;
+  border-radius: 34px;
+  overflow:hidden
+}
+.card-details h3 {
+  margin-bottom: 10px;
+  font-size: 18px;
+  white-space: nowrap;
+  
+}
+
+.card-details p {
+  font-size: 14px;
+  /* 3 lines max */
+  line-height: 1.2em;
+  white-space: normal;
+  overflow: normal; 
+  
+  text-overflow: break-word; /* Add ellipsis if text overflows */
+
+}
+
+.card-details h3 {
+  margin-bottom: 10px;
+}
+
+.card-details p {
+  font-size: 14px;
+}
+
+/* Show the pop-up details on hover */
+.card:hover .card-details {
+  opacity: 1;
+}
+
+.card{
+  display: flex;
+}
 /* contact section  */
 
-.contact{
+.contact {
   margin: 14px;
   padding: 0 40px;
 }
 
 .contact h1,
-.contact>h2{
+.contact > h2 {
   text-align: center;
 }
 
-.contact h1{
+.contact h1 {
   font-size: 40px;
   color: var(--secondry-green);
-
 }
 
-.emaill{
+.emaill {
   display: flex;
   gap: 40px;
+  background-color: var(--tile-color);
+  box-shadow:0 0 19px black;
+  border-radius: 30px;
+ padding-left: 10px;
+
 }
 
-.text{
+.text {
   flex: 3;
-
 }
 
 .Etext {
- display: flex;
- align-items: center;
- justify-content: center;
-
+  display: flex;
+  align-items: center;
+  justify-content: center;
 }
 
-.Etext p{
+.Etext p {
   font-size: 18px;
   color: var(--secondry-green);
 }
 
- .emaill form {
-   display: flex;
-   flex:3 ;
+.emaill form {
+  display: flex;
+  flex: 3;
   flex-direction: column;
   margin: 10px;
- }
-
- .emaill form input ,
- .emaill form textarea {
-  background-color: transparent;
-  resize: none;}
-
-  .emaill form button{
-    background-color: grey;
-
-  }
-   .social{
-    margin: 23px;
-    height: 10%;
-    padding: 10px;
-    text-align: center;
-    
-    border-radius: 40px;
-    
-   }
-   .social p{
-   font-size: 120%;
-   color: var(--secondry-green);
-   }
-
-   .icon{
-   
-    display: flex;
-    margin: 10px;
-    justify-content: center;
-    
-   }
-
-   
-
-   .icon a{
-    margin: 20px 40px;
-    padding: 10px;
-    box-shadow: 2px 4px 5px #808080;
-    
-    border-radius: 50%;
-    scale: 1;
-
-
-   }
-
-
-   .icon a:hover{
-    scale: 1.75;
-    transition: 0.35s ease-in-out;
-   }
-   .icon .fa-instagram:hover{
-    background-image: radial-gradient(circle,  #feda75 , #fa7e1e , #d62976 , #962fbf , #4f5bd5);
-   }
-   .icon  .fa-twitter:hover{
-        background-color: #1da1f2;
-   }
-   .icon .fa-linkedin:hover{
-    background-color: #0077B5;
-
-   }
   
- 
+}
+
+#Email , #name  ,#message , #submit{
+  border-radius: 10px;
+}
+
+.emaill form input,
+.emaill form textarea {
+  background-color: transparent;
+  resize: none;
+}
+
+.emaill form button {
+  background-color: rgb(44, 44, 44);
+}
+.social {
+  margin: 23px;
+  height: 10%;
+  padding: 10px;
+  text-align: center;
+  /* box-shadow: 0 0 10px var(--primary-green); */
+  border-radius: 40px;
+}
+.social p {
+  font-size: 120%;
+  color: var(--secondry-green);
+}
+
+.icon {
+  display: flex;
+  margin: 10px;
+  justify-content: center;
+}
+
+.icon a {
+  margin: 20px 40px;
+  padding: 10px;
+  box-shadow: 2px 4px 5px #000000;
+
+  border-radius: 50%;
+  scale: 1;
+}
+
+.icon a:hover {
+  scale: 1.75;
+  transition: 0.35s ease-in-out;
+}
+.icon .fa-instagram:hover {
+  background-image: radial-gradient(
+    circle,
+    #feda75,
+    #fa7e1e,
+    #d62976,
+    #962fbf,
+    #4f5bd5
+  );
+}
+.icon .fa-twitter:hover {
+  background-color: #1da1f2;
+}
+.icon .fa-linkedin:hover {
+  background-color: #0077b5;
+}
+.icon .fa-github:hover {
+  background-color: rgb(21, 20, 20);
+}
 
 @media (max-width: 850px) {
   .about img {
     width: 300px;
   }
+}
+
+@media (max-width: 500px){
+  .Etext>p{
+    margin-top: 10px;
+  }
+
+  .about{
+
+    height: 100vh;
+  }
+.about img{
+
+  top: 80px;
+ width: auto;
+ height: auto;
+ 
+}
+  
 }
 
 @media (max-width: 650px) {
@@ -302,11 +439,21 @@ z-index: 100;
     font-size: 38px;
   }
 
-  .about img {
+  .about img  {
     width: 250px;
-    border: 1px solid green;
+    border: 1px solid rgb(5, 6, 5);
+   
   }
 
+  .photo {
+    margin-top: 20px
+  }
+
+
+  .card-details p{
+    overflow: scroll;
+  
+  }
   .cell img {
     object-fit: contain;
     width: 80px;
@@ -316,14 +463,21 @@ z-index: 100;
     scale: 1.114;
   }
 
-
   /* contact  */
-  .emaill{
+  .emaill {
     display: flex;
     flex-direction: column;
   }
 
-  .icon a{
+  .card{
+    height: 200px;
+    width: 375px;
+    margin: 30px 30px;
+  padding:10px;
+  }
+
+
+  .icon a {
     margin: 20px 20px;
   }
 }
