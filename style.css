@@ -85,10 +85,7 @@ z-index: 100;
   gap: 50px;
 }
 
-.main { 
-  
-  background-image:url(asset/istockphoto-1303053462-1024x1024.jpg) ;
-}
+
 
 .about h1 {
   font-size: 50px;
@@ -229,7 +226,7 @@ z-index: 100;
     height: 10%;
     padding: 10px;
     text-align: center;
-    box-shadow: 0 0 10px var(--primary-green);
+    
     border-radius: 40px;
     
    }
