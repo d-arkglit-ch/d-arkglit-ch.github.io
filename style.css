@@ -506,6 +506,9 @@ font-size: 40px;
 
  
   /* contact  */
+  .se1{
+height:50vh;
+  }
   .emaill {
     display: flex;
     flex-direction: column;
